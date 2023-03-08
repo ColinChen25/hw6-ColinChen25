@@ -1,10 +1,13 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
+import { LoginSessionContext } from "./BadgerApp";
 
 import crest from '../../assets/uw-crest.svg'
 
 function BadgerLayout(props) {
+    const [loginSession,setLoginSession]=useContext(LoginSessionContext);
+
     return (
         <div>
             <Navbar bg="dark" variant="dark">
@@ -21,11 +24,24 @@ function BadgerLayout(props) {
                     </Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="login">Login</Nav.Link>
-                        <Nav.Link as={Link} to="register">Register</Nav.Link>
+                        {loginSession ? (
+                            <>
+                            <Nav.Link as={Link} to="logout">Logout</Nav.Link>
+                            </>
+                        ) : (
+                            <>
+                            <Nav.Link as={Link} to="login">Login</Nav.Link>
+                            <Nav.Link as={Link} to="register">Register</Nav.Link>
+                            </>
+                        )}
                         <NavDropdown title="Chatrooms">
                             {
-                               /* TODO Display a NavDropdown.Item for each chatroom that sends the user to that chatroom! */
+                                props.chatrooms.map(room => {
+                                    return <NavDropdown.Item 
+                                    key={room}
+                                    as={Link} to={`chatrooms/${room}`}
+                                    >{room}</NavDropdown.Item>
+                                })
                             }
                         </NavDropdown>
 
