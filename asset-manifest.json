@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/hw6-ColinChen25/static/css/main.c658c90c.css",
+    "main.js": "/hw6-ColinChen25/static/js/main.01a18b54.js",
+    "static/js/787.28fc5693.chunk.js": "/hw6-ColinChen25/static/js/787.28fc5693.chunk.js",
+    "static/media/uw-crest.svg": "/hw6-ColinChen25/static/media/uw-crest.b87cb864af453d55d1078d9b1842c82a.svg",
+    "index.html": "/hw6-ColinChen25/index.html",
+    "main.c658c90c.css.map": "/hw6-ColinChen25/static/css/main.c658c90c.css.map",
+    "main.01a18b54.js.map": "/hw6-ColinChen25/static/js/main.01a18b54.js.map",
+    "787.28fc5693.chunk.js.map": "/hw6-ColinChen25/static/js/787.28fc5693.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c658c90c.css",
+    "static/js/main.01a18b54.js"
+  ]
+}
